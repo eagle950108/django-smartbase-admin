@@ -302,6 +302,9 @@ export const customActionsPlugin = (fp) => {
             } else {
                 shortcutValueStr = fromDateFormatted + fp.config.locale.rangeSeparator + toDateFormatted
             }
+            if (["in_the_last", "in_the_next"].includes(shortcut.label)) {
+                shortcutValueStr = shortcut.label
+            }
             el.append(createRadioInput(
                 `${baseId}_range${idx}`,
                 `${baseId}_shortcut`,

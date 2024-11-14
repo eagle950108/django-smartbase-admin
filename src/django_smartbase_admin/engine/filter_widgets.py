@@ -378,6 +378,11 @@ class DateFilterWidget(SBAdminFilterWidget):
         """
         if filter_value is None:
             return [None, None]
+        now = timezone.now()
+        for shortcut in cls.shortcuts:
+            if shortcut["label"] == filter_value:
+                return cls.process_shortcut(shortcut, now)["value"]
+            
         date_format = cls.DATE_FORMAT
         date_range = filter_value.split(cls.DATE_RANGE_SPLIT)
         if len(date_range) == 2:
