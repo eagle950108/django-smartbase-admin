@@ -9,7 +9,7 @@
     "analyze-bundle": "gulp svg-sprites && webpack --progress --config sbcore/templates_tw/static/build/webpack.analyze.js",
     "lint": "eslint --fix"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "@popperjs/core": "^2.11.4",
     "@sentry/browser": "^6.18.2",
